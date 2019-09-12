@@ -75,14 +75,16 @@ li
     line-height: 2em
 
 // 仅设置第一层的列表样式
-&>
-    ul, ol
-        margin-top: 1rem
-        margin-bottom: 1rem
 
 ul, ol
+    margin-top: 1em
+    margin-bottom: 1em
     padding-left: 2rem
     // 这里可以改变除第一层外的列表 padding-left
+
+    ul, ol
+        margin-top: 0
+        margin-bottom: 0
 
 ol
     list-style-type: decimal
@@ -111,15 +113,22 @@ li
 blockquote
     background-color: $hexBg2
     color: $hexGrey
-    padding: 0.5rem 1rem
+    padding: 0.25rem 1rem
     border-left: 2px solid $hexLightPale
     font-weight: 400
 
     margin-top: 1.5rem
     margin-bottom: 1.5rem
 
-    &> *
-        font-size: 75%
+    &>
+        *
+            font-size: 75%
+            *
+                font-size: 100%
+
+    &:last-child
+        margin-bottom: 0.5rem
+
 
 
 // ====================

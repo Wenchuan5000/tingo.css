@@ -132,11 +132,13 @@ img {
   .md li {
     font-size: 1rem;
     line-height: 2em; }
-  .md > ul, .md > ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem; }
   .md ul, .md ol {
+    margin-top: 1em;
+    margin-bottom: 1em;
     padding-left: 2rem; }
+    .md ul ul, .md ul ol, .md ol ul, .md ol ol {
+      margin-top: 0;
+      margin-bottom: 0; }
   .md ol {
     list-style-type: decimal; }
   .md ul {
@@ -152,13 +154,17 @@ img {
   .md blockquote {
     background-color: #fafafa;
     color: #858585;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
     border-left: 2px solid #ebebeb;
     font-weight: 400;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem; }
     .md blockquote > * {
       font-size: 75%; }
+      .md blockquote > * * {
+        font-size: 100%; }
+    .md blockquote:last-child {
+      margin-bottom: 0.5rem; }
   .md hr {
     border: none;
     width: auto;
