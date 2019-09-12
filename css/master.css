@@ -1,0 +1,278 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: inherit; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, img {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, label, select, button, textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  box-shadow: none; }
+
+input:focus {
+  outline: 0; }
+
+html {
+  font-size: 16px; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", "Verdana", "sans-serif";
+  font-weight: 300; }
+
+code,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Source Code Pro", monospace; }
+
+*[class*="font-"][class*="-sans"] {
+  font-family: "Noto Sans", "Noto Sans SC", sans-serif; }
+*[class*="font-"][class*="-serif"] {
+  font-family: "Noto Serif", "Noto Serif SC", serif; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  color: #333333; }
+
+body {
+  overflow-x: hidden; }
+
+img {
+  vertical-align: middle;
+  max-width: 100%; }
+
+.md {
+  max-width: 800px;
+  margin: 0 auto; }
+  .md > header,
+  .md > p,
+  .md > h1, .md > h2, .md > h3, .md > h4, .md > h5, .md > h6, .md > details,
+  .md > ol, .md > li,
+  .md > .inputView,
+  .md > button {
+    padding: 0 1.5rem; }
+  .md > blockquote {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; }
+  .md h1, .md h2, .md h3, .md h4, .md h5, .md h6 {
+    line-height: 1.75;
+    margin-top: 1em;
+    margin-bottom: 1rem;
+    font-weight: 500; }
+  .md h1 {
+    font-size: 2rem; }
+  .md h2 {
+    font-size: 1.5rem; }
+  .md h3 {
+    font-size: 1.25rem; }
+  .md h4, .md h5 {
+    font-size: 1rem; }
+  .md h5 {
+    font-size: 0.875rem; }
+  .md h6 {
+    font-size: 0.875rem;
+    color: #858585; }
+  .md header h1 {
+    font-size: 2.5rem; }
+  .md p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .md p a, .md li a, .md table a, .md blockquote a {
+    color: inherit;
+    cursor: pointer; }
+  .md li {
+    font-size: 1rem;
+    line-height: 2em; }
+  .md > ul, .md > ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  .md ul, .md ol {
+    padding-left: 2rem; }
+  .md ol {
+    list-style-type: decimal; }
+  .md ul {
+    list-style-type: disc; }
+  .md li ol {
+    list-style-type: lower-roman; }
+  .md li ul {
+    list-style-type: circle; }
+  .md li li ol {
+    list-style-type: lower-alpha; }
+  .md li li ul {
+    list-style-type: square; }
+  .md blockquote {
+    background-color: #fafafa;
+    color: #858585;
+    padding: 0.5rem 1rem;
+    border-left: 2px solid #ebebeb;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; }
+    .md blockquote > * {
+      font-size: 75%; }
+  .md hr {
+    border: none;
+    width: auto;
+    height: 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    margin: 1.5rem 1.5rem; }
+  .md sup, .md sub {
+    font-size: smaller;
+    line-height: 1; }
+  .md sup {
+    vertical-align: super; }
+  .md sub {
+    vertical-align: sub; }
+  .md strong, .md b {
+    font-weight: bold; }
+  .md del {
+    text-decoration: line-through;
+    color: #858585; }
+  .md em {
+    font-style: italic; }
+  .md mark {
+    background-color: rgba(51, 195, 194, 0.24);
+    padding-top: 0.125em;
+    padding-bottom: 0.125em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out; }
+    .md mark:hover {
+      background-color: rgba(51, 195, 194, 0.4); }
+  .md u {
+    background-color: rgba(51, 195, 194, 0.24);
+    padding-top: 0.125em;
+    padding-bottom: 0.125em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out; }
+    .md u:hover {
+      background-color: rgba(51, 195, 194, 0.4); }
+  .md details {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem; }
+    .md details summary {
+      font-weight: bold;
+      margin-left: -1rem;
+      line-height: 2; }
+  .md > img {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; }
+    .md > img._12 {
+      padding-left: 12px;
+      padding-right: 12px; }
+    .md > img + blockquote {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-top: -0.5rem;
+      text-align: center; }
+  .md .inputView {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+    width: 247px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 1.5rem;
+    overflow: hidden; }
+    .md .inputView input {
+      position: relative;
+      width: 100%;
+      -webkit-transform: translate(0, -50%);
+      text-align: center;
+      font-size: 1.25rem;
+      letter-spacing: 4px;
+      line-height: 2rem;
+      height: 2rem;
+      margin-top: calc(1.5rem - 1px);
+      color: rgba(0, 0, 0, 0.8); }
+      .md .inputView input::placeholder {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.16);
+        letter-spacing: 0; }
+  .md button.a {
+    letter-spacing: 2px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+    overflow: hidden;
+    background-color: #333333;
+    width: 247px;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04), 0 0 8px rgba(0, 0, 0, 0.04);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500; }
+  .md header.contentHeader {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; }
+    .md header.contentHeader h1.title {
+      font-size: 1.5rem !important;
+      line-height: 1.75 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0.5rem !important; }
+    .md header.contentHeader p.caption {
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 2;
+      color: rgba(0, 0, 0, 0.24); }
+      .md header.contentHeader p.caption a {
+        color: #33C3C2; }
+  .md img.cover {
+    margin: 0; }
+
+.end {
+  height: 123px; }
