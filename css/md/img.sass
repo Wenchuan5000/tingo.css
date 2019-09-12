@@ -8,9 +8,76 @@
         padding-right: 12px
 
     &+ blockquote
+        color: $hexGrey
+        font-weight: 400
         background: none
         border: none
-        padding: 0
+        padding: 0 1.5rem
+        margin: 0
+        margin-bottom: 1.5rem
 
-        margin-top: -0.5rem
+        margin-top: -0.75rem
         text-align: center
+
+        &> *
+            font-size: 75%
+            *
+                font-size: 100%
+
+
+img ~ h6
+    display: none
+
+
+h6 + img
+    margin-left: 1.5rem
+    margin-right: 1.5rem
+    width: calc(100% - 3rem)
+    border-radius: 8px
+
+
+h6
+    &+ ul
+        margin: 1.5rem 0
+        padding: 0
+        display: grid
+        list-style: none
+
+        grid-column-gap: 2px
+        grid-row-gap: 2px
+
+        grid-template-columns: 50% 50%
+
+        li
+            position: relative
+            // overflow: hidden
+            padding-top: 100%
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+
+                object-fit: cover
+
+h6 + h6
+    &+ ul
+        grid-template-columns: 33.3333% 33.3333% 33.3333%
+
+h6 + ul + blockquote
+    color: $hexGrey
+    font-weight: 400
+    background: none
+    border: none
+    padding: 0 1.5rem
+    margin: 0
+    margin-bottom: 1.5rem
+
+    margin-top: -0.75rem
+    text-align: center
+
+    &> *
+        font-size: 75%
+        *
+            font-size: 100%

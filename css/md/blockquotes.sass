@@ -1,0 +1,57 @@
+blockquote
+    background-color: $hexBg2
+    color: $hexGrey
+    padding: 0.25rem 1rem
+    border-left: 2px solid $hexLightPale
+    font-weight: 400
+
+    margin-top: 1.5rem
+    margin-bottom: 1.5rem
+
+    &>
+        *
+            font-size: 87.5%
+            *
+                font-size: 100%
+
+    &:last-child
+        margin-bottom: 0.5rem
+
+    &~ h6
+        display: none
+
+h6 + blockquote
+    background: none
+    padding: 0 1.5rem
+    border: none
+    position: relative
+
+    color: $rgbaDarkGrey
+    font-weight: 500
+
+    &>
+        *
+            font-size: 100%
+            *
+                font-size: 100%
+
+
+    ::before
+        content: "“"
+        position: absolute
+        left: 0
+        top: 0
+
+        font-size: 3rem
+        line-height: 1
+        color: $rgbaPale
+
+    ::after
+        content: "”"
+        position: absolute
+
+        font-size: 2rem
+        color: $rgbaPale
+        // bottom: -2rem
+        // right: 0.5rem
+        margin-left: 0.5rem

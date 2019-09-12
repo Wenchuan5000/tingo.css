@@ -25,23 +25,16 @@ h1, h2, h3, h4, h5, h6
     font-weight: 500
 
 h1
-    font-size: 2rem
-
-h2
-    font-size: 1.5rem
-
-h3
     font-size: 1.25rem
 
-h4, h5
+h2
+    font-size: 1.125rem
+
+h3, h4, h5, h6
     font-size: 1rem
 
-h5
-    font-size: 0.875rem
-
-h6
-    font-size: 0.875rem
-    color: $hexGrey
+h5, h6
+    display: none
 
 header
     h1
@@ -63,7 +56,7 @@ p
 // ====================
 p, li, table, blockquote
     a
-        color: inherit
+        color: $brandColor
         cursor: pointer
 
 
@@ -108,30 +101,6 @@ li
 
 
 // ====================
-// 引用块们
-// ====================
-blockquote
-    background-color: $hexBg2
-    color: $hexGrey
-    padding: 0.25rem 1rem
-    border-left: 2px solid $hexLightPale
-    font-weight: 400
-
-    margin-top: 1.5rem
-    margin-bottom: 1.5rem
-
-    &>
-        *
-            font-size: 75%
-            *
-                font-size: 100%
-
-    &:last-child
-        margin-bottom: 0.5rem
-
-
-
-// ====================
 // 分割线们
 // ====================
 hr
@@ -161,14 +130,15 @@ sub
 // 强调们
 // ====================
 strong, b
-    font-weight: bold
+    font-weight: 500
 
 del
     text-decoration: line-through
     color: $hexGrey
 
 em
-    font-style: italic
+    font-weight: 500
+    font-style: normal
 
 mark
     background-color: rgba($brandColor, 0.24)

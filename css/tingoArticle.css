@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -107,18 +108,13 @@ img {
     margin-bottom: 1rem;
     font-weight: 500; }
   .md h1 {
-    font-size: 2rem; }
-  .md h2 {
-    font-size: 1.5rem; }
-  .md h3 {
     font-size: 1.25rem; }
-  .md h4, .md h5 {
+  .md h2 {
+    font-size: 1.125rem; }
+  .md h3, .md h4, .md h5, .md h6 {
     font-size: 1rem; }
-  .md h5 {
-    font-size: 0.875rem; }
-  .md h6 {
-    font-size: 0.875rem;
-    color: #858585; }
+  .md h5, .md h6 {
+    display: none; }
   .md header h1 {
     font-size: 2.5rem; }
   .md p {
@@ -127,7 +123,7 @@ img {
     margin-top: 1em;
     margin-bottom: 1em; }
   .md p a, .md li a, .md table a, .md blockquote a {
-    color: inherit;
+    color: #33C3C2;
     cursor: pointer; }
   .md li {
     font-size: 1rem;
@@ -151,20 +147,6 @@ img {
     list-style-type: lower-alpha; }
   .md li li ul {
     list-style-type: square; }
-  .md blockquote {
-    background-color: #fafafa;
-    color: #858585;
-    padding: 0.25rem 1rem;
-    border-left: 2px solid #ebebeb;
-    font-weight: 400;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem; }
-    .md blockquote > * {
-      font-size: 75%; }
-      .md blockquote > * * {
-        font-size: 100%; }
-    .md blockquote:last-child {
-      margin-bottom: 0.5rem; }
   .md hr {
     border: none;
     width: auto;
@@ -179,12 +161,13 @@ img {
   .md sub {
     vertical-align: sub; }
   .md strong, .md b {
-    font-weight: bold; }
+    font-weight: 500; }
   .md del {
     text-decoration: line-through;
     color: #858585; }
   .md em {
-    font-style: italic; }
+    font-weight: 500;
+    font-style: normal; }
   .md mark {
     background-color: rgba(51, 195, 194, 0.24);
     padding-top: 0.125em;
@@ -216,11 +199,101 @@ img {
       padding-left: 12px;
       padding-right: 12px; }
     .md > img + blockquote {
+      color: #858585;
+      font-weight: 400;
       background: none;
       border: none;
-      padding: 0;
-      margin-top: -0.5rem;
+      padding: 0 1.5rem;
+      margin: 0;
+      margin-bottom: 1.5rem;
+      margin-top: -0.75rem;
       text-align: center; }
+      .md > img + blockquote > * {
+        font-size: 75%; }
+        .md > img + blockquote > * * {
+          font-size: 100%; }
+  .md img ~ h6 {
+    display: none; }
+  .md h6 + img {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    width: calc(100% - 3rem);
+    border-radius: 8px; }
+  .md h6 + ul {
+    margin: 1.5rem 0;
+    padding: 0;
+    display: grid;
+    list-style: none;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    grid-template-columns: 50% 50%; }
+    .md h6 + ul li {
+      position: relative;
+      padding-top: 100%; }
+      .md h6 + ul li img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  .md h6 + h6 + ul {
+    grid-template-columns: 33.3333% 33.3333% 33.3333%; }
+  .md h6 + ul + blockquote {
+    color: #858585;
+    font-weight: 400;
+    background: none;
+    border: none;
+    padding: 0 1.5rem;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    margin-top: -0.75rem;
+    text-align: center; }
+    .md h6 + ul + blockquote > * {
+      font-size: 75%; }
+      .md h6 + ul + blockquote > * * {
+        font-size: 100%; }
+  .md blockquote {
+    background-color: #fafafa;
+    color: #858585;
+    padding: 0.25rem 1rem;
+    border-left: 2px solid #ebebeb;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; }
+    .md blockquote > * {
+      font-size: 87.5%; }
+      .md blockquote > * * {
+        font-size: 100%; }
+    .md blockquote:last-child {
+      margin-bottom: 0.5rem; }
+    .md blockquote ~ h6 {
+      display: none; }
+  .md h6 + blockquote {
+    background: none;
+    padding: 0 1.5rem;
+    border: none;
+    position: relative;
+    color: rgba(0, 0, 0, 0.64);
+    font-weight: 500; }
+    .md h6 + blockquote > * {
+      font-size: 100%; }
+      .md h6 + blockquote > * * {
+        font-size: 100%; }
+    .md h6 + blockquote ::before {
+      content: "“";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.16); }
+    .md h6 + blockquote ::after {
+      content: "”";
+      position: absolute;
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.16);
+      margin-left: 0.5rem; }
   .md .inputView {
     text-align: center;
     margin: 0 auto;
@@ -275,10 +348,9 @@ img {
       font-size: 0.75rem;
       line-height: 2;
       color: rgba(0, 0, 0, 0.24); }
-      .md header.contentHeader p.caption a {
-        color: #33C3C2; }
   .md img.cover {
-    margin: 0; }
+    margin: 0;
+    width: 100%; }
 
 .end {
   height: 123px; }
