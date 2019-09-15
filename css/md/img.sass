@@ -15,8 +15,8 @@ img, figure
             padding-right: 12px
 
 &>
-    p > figure img,
     figure img,
+    p > figure img,
     p > img
         @media only screen and (max-width: $mdMaxWidth - ($mdHorizontalMargin * 2))
             max-width: 10000px
@@ -24,16 +24,7 @@ img, figure
             margin-left: -24px
 
 
-h6 + p > img
-    @media only screen and (max-width: $mdMaxWidth - ($mdHorizontalMargin * 2))
-        max-width: 100%
-        width: auto
-        margin-left: 0
-
-    border-radius: 8px
-
-
-h6
+[class*="grid"]
     &+ ul
         margin: 1.5rem 0
         padding: 0
@@ -42,9 +33,6 @@ h6
 
         grid-column-gap: 2px
         grid-row-gap: 2px
-
-        grid-template-columns: 50% 50%
-        padding-right: 2px
 
         @media only screen and (max-width: $mdMaxWidth - ($mdHorizontalMargin * 2))
             max-width: 10000px
@@ -57,6 +45,7 @@ h6
             position: relative
             padding-top: 100%
             img, p
+                margin: 0
                 position: absolute
                 top: 0
                 left: 0
@@ -65,30 +54,17 @@ h6
 
                 object-fit: cover
 
-h6 + h6
-    &+ ul
-        grid-template-columns: 33.3333% 33.3333% 33.3333%
-        padding-right: 4px
+    &[class*="-4"]
+        &+ ul
+            grid-template-columns: 50% 50%
+            padding-right: 2px
 
-        @media only screen and (max-width: $mdMaxWidth - ($mdHorizontalMargin * 2))
-            max-width: 10000px
-            width: calc(100% + 48px)
-            margin-left: -24px
+    &[class*="-9"]
+        &+ ul
+            grid-template-columns: 33.3333% 33.3333% 33.3333%
+            padding-right: 4px
 
-h6 + ul + blockquote
-    color: $hexGrey
-    font-weight: 400
-    background: none
-    border: none
-    padding: 0 1.5rem
-    margin: 0
-    margin-bottom: 1.5rem
-
-    margin-top: -0.75rem
-    *
-        text-align: center
-
-    &> *
-        font-size: 75%
-        *
-            font-size: 100%
+            @media only screen and (max-width: $mdMaxWidth - ($mdHorizontalMargin * 2))
+                max-width: 10000px
+                width: calc(100% + 48px)
+                margin-left: -24px

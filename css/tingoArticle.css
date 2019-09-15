@@ -121,8 +121,8 @@ img {
     border: none;
     width: auto;
     height: 1px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    margin: 1.5rem 1.5rem; }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    margin: 1.5rem 0; }
   .md sup, .md sub,
   .markdown-body sup,
   .markdown-body sub {
@@ -197,82 +197,57 @@ img {
       padding-left: 12px;
       padding-right: 12px; }
   @media only screen and (max-width: 672px) {
-    .md > p > figure img,
     .md > figure img,
+    .md > p > figure img,
     .md > p > img,
-    .markdown-body > p > figure img,
     .markdown-body > figure img,
+    .markdown-body > p > figure img,
     .markdown-body > p > img {
       max-width: 10000px;
       width: calc(100% + 48px);
       margin-left: -24px; } }
-  .md h6 + p > img,
-  .markdown-body h6 + p > img {
-    border-radius: 8px; }
-    @media only screen and (max-width: 672px) {
-      .md h6 + p > img,
-      .markdown-body h6 + p > img {
-        max-width: 100%;
-        width: auto;
-        margin-left: 0; } }
-  .md h6 + ul,
-  .markdown-body h6 + ul {
+  .md [class*="grid"] + ul,
+  .markdown-body [class*="grid"] + ul {
     margin: 1.5rem 0;
     padding: 0;
     display: grid;
     list-style: none;
     grid-column-gap: 2px;
-    grid-row-gap: 2px;
-    grid-template-columns: 50% 50%;
-    padding-right: 2px; }
+    grid-row-gap: 2px; }
     @media only screen and (max-width: 672px) {
-      .md h6 + ul,
-      .markdown-body h6 + ul {
+      .md [class*="grid"] + ul,
+      .markdown-body [class*="grid"] + ul {
         max-width: 10000px;
         width: calc(100% + 48px);
         margin-left: -24px; } }
-    .md h6 + ul li,
-    .markdown-body h6 + ul li {
+    .md [class*="grid"] + ul li,
+    .markdown-body [class*="grid"] + ul li {
       position: relative;
       padding-top: 100%; }
-      .md h6 + ul li img, .md h6 + ul li p,
-      .markdown-body h6 + ul li img,
-      .markdown-body h6 + ul li p {
+      .md [class*="grid"] + ul li img, .md [class*="grid"] + ul li p,
+      .markdown-body [class*="grid"] + ul li img,
+      .markdown-body [class*="grid"] + ul li p {
+        margin: 0;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover; }
-  .md h6 + h6 + ul,
-  .markdown-body h6 + h6 + ul {
+  .md [class*="grid"][class*="-4"] + ul,
+  .markdown-body [class*="grid"][class*="-4"] + ul {
+    grid-template-columns: 50% 50%;
+    padding-right: 2px; }
+  .md [class*="grid"][class*="-9"] + ul,
+  .markdown-body [class*="grid"][class*="-9"] + ul {
     grid-template-columns: 33.3333% 33.3333% 33.3333%;
     padding-right: 4px; }
     @media only screen and (max-width: 672px) {
-      .md h6 + h6 + ul,
-      .markdown-body h6 + h6 + ul {
+      .md [class*="grid"][class*="-9"] + ul,
+      .markdown-body [class*="grid"][class*="-9"] + ul {
         max-width: 10000px;
         width: calc(100% + 48px);
         margin-left: -24px; } }
-  .md h6 + ul + blockquote,
-  .markdown-body h6 + ul + blockquote {
-    color: #858585;
-    font-weight: 400;
-    background: none;
-    border: none;
-    padding: 0 1.5rem;
-    margin: 0;
-    margin-bottom: 1.5rem;
-    margin-top: -0.75rem; }
-    .md h6 + ul + blockquote *,
-    .markdown-body h6 + ul + blockquote * {
-      text-align: center; }
-    .md h6 + ul + blockquote > *,
-    .markdown-body h6 + ul + blockquote > * {
-      font-size: 75%; }
-      .md h6 + ul + blockquote > * *,
-      .markdown-body h6 + ul + blockquote > * * {
-        font-size: 100%; }
   .md blockquote,
   .markdown-body blockquote {
     background: none;
@@ -280,7 +255,9 @@ img {
     padding: 0;
     color: inherit;
     position: relative;
-    margin: 1.5rem 0; }
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    box-shadow: inset 2px 0 0 rgba(0, 0, 0, 0.8); }
     .md blockquote > *,
     .markdown-body blockquote > * {
       font-size: 87.5% !important; }
@@ -290,15 +267,23 @@ img {
     .md blockquote *,
     .markdown-body blockquote * {
       text-align: left; }
-  .md blockquote blockquote,
-  .markdown-body blockquote blockquote {
+  .md blockquote > blockquote,
+  .markdown-body blockquote > blockquote {
     background: none;
     border: none;
     color: rgba(0, 0, 0, 0.64);
     font-size: 100% !important;
-    margin-bottom: 4rem; }
-    .md blockquote blockquote::after,
-    .markdown-body blockquote blockquote::after {
+    margin-bottom: 4rem;
+    background-color: white;
+    box-shadow: none;
+    padding-left: 0;
+    margin-left: -1rem; }
+    .md blockquote > blockquote *,
+    .markdown-body blockquote > blockquote * {
+      text-align: center;
+      hyphens: none; }
+    .md blockquote > blockquote::after,
+    .markdown-body blockquote > blockquote::after {
       content: "";
       position: absolute;
       width: 3rem;
@@ -307,30 +292,28 @@ img {
       transform: translate(-50%, 0);
       left: 50%;
       bottom: -1.5em; }
-    .md blockquote blockquote *,
-    .markdown-body blockquote blockquote * {
-      text-align: center; }
-  .md h5 + blockquote,
-  .markdown-body h5 + blockquote {
+  .md .quote + blockquote,
+  .markdown-body .quote + blockquote {
     margin-top: 2rem;
     margin-bottom: 2rem;
     background: none;
     padding: 0 1.5em;
     border: none;
     position: relative;
+    box-shadow: none;
     color: rgba(0, 0, 0, 0.64);
     font-weight: 500; }
-    .md h5 + blockquote > *,
-    .markdown-body h5 + blockquote > * {
+    .md .quote + blockquote > *,
+    .markdown-body .quote + blockquote > * {
       font-size: 100%; }
-      .md h5 + blockquote > * *,
-      .markdown-body h5 + blockquote > * * {
+      .md .quote + blockquote > * *,
+      .markdown-body .quote + blockquote > * * {
         font-size: 100%; }
-    .md h5 + blockquote *,
-    .markdown-body h5 + blockquote * {
+    .md .quote + blockquote *,
+    .markdown-body .quote + blockquote * {
       text-align: left; }
-    .md h5 + blockquote::before,
-    .markdown-body h5 + blockquote::before {
+    .md .quote + blockquote::before,
+    .markdown-body .quote + blockquote::before {
       background: none;
       content: "❛❛";
       position: absolute;
@@ -339,53 +322,20 @@ img {
       font-size: 3em;
       line-height: 1;
       color: rgba(0, 0, 0, 0.08); }
-    .md h5 + blockquote::after,
-    .markdown-body h5 + blockquote::after {
+    .md .quote + blockquote::after,
+    .markdown-body .quote + blockquote::after {
       content: "❜❜";
       position: absolute;
       font-size: 1.5em;
       color: rgba(0, 0, 0, 0.08);
       bottom: 0;
       right: 0.5em; }
-    .md h5 + blockquote > *,
-    .markdown-body h5 + blockquote > * {
+    .md .quote + blockquote > *,
+    .markdown-body .quote + blockquote > * {
       font-size: 100% !important; }
-      .md h5 + blockquote > * *,
-      .markdown-body h5 + blockquote > * * {
+      .md .quote + blockquote > * *,
+      .markdown-body .quote + blockquote > * * {
         font-size: 100%; }
-  .md h5 + h5 + blockquote,
-  .markdown-body h5 + h5 + blockquote {
-    margin: 3rem 0; }
-    .md h5 + h5 + blockquote *,
-    .markdown-body h5 + h5 + blockquote * {
-      text-align: center;
-      hyphens: none; }
-    .md h5 + h5 + blockquote::before, .md h5 + h5 + blockquote::after,
-    .markdown-body h5 + h5 + blockquote::before,
-    .markdown-body h5 + h5 + blockquote::after {
-      content: "";
-      height: 1px;
-      width: 8rem;
-      background-color: rgba(0, 0, 0, 0.16);
-      transform: translate(-50%, 0);
-      position: absolute;
-      left: 50%; }
-    .md h5 + h5 + blockquote::before,
-    .markdown-body h5 + h5 + blockquote::before {
-      top: -1rem; }
-    .md h5 + h5 + blockquote::after,
-    .markdown-body h5 + h5 + blockquote::after {
-      bottom: -1rem; }
-  .md h6 + blockquote,
-  .markdown-body h6 + blockquote {
-    padding-left: 1rem;
-    border-left: 1px solid rgba(0, 0, 0, 0.8); }
-  .md h6 + h6 + blockquote,
-  .markdown-body h6 + h6 + blockquote {
-    border-left-color: rgba(0, 0, 0, 0.16);
-    background-color: rgba(0, 0, 0, 0.02);
-    padding: 1rem;
-    color: rgba(0, 0, 0, 0.48); }
   .md h1, .md h2, .md h3, .md h4, .md h5, .md h6,
   .markdown-body h1,
   .markdown-body h2,
@@ -440,8 +390,8 @@ img {
     line-height: 2;
     margin-top: 1em;
     margin-bottom: 1em; }
-  .md h5 + p::first-letter,
-  .markdown-body h5 + p::first-letter {
+  .md .initial + p::first-letter,
+  .markdown-body .initial + p::first-letter {
     vertical-align: middle;
     float: left;
     font-size: 48px;

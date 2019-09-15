@@ -5,9 +5,9 @@ blockquote
     color: inherit
     position: relative
     margin: 1.5rem 0
-    // padding-left: 1rem
+    padding-left: 1rem
     // border-left: 1px solid $rgbaDark
-
+    box-shadow: inset 2px 0 0 $rgbaDark
     &>
         *
             font-size: 87.5% !important
@@ -17,12 +17,20 @@ blockquote
         text-align: left
 
 blockquote
-    blockquote
+    &> blockquote
+        *
+            text-align: center
+            hyphens: none
+
         background: none
         border: none
         color: $rgbaDarkGrey
         font-size: 100% !important
         margin-bottom: 4rem
+        background-color: white
+        box-shadow: none
+        padding-left: 0
+        margin-left: -1rem
 
         &::after
             content: ""
@@ -30,17 +38,13 @@ blockquote
             width: 3rem
             height: 1px
             background-color: $rgbaPale
-
             transform: translate(-50%, 0)
             left: 50%
             bottom: -1.5em
 
-        *
-            text-align: center
 
 
-
-h5
+.quote
     &+ blockquote
         margin-top: 2rem
         margin-bottom: 2rem
@@ -48,6 +52,7 @@ h5
         padding: 0 1.5em
         border: none
         position: relative
+        box-shadow: none
 
         color: $rgbaDarkGrey
         font-weight: 500
@@ -88,50 +93,3 @@ h5
                 font-size: 100% !important
                 *
                     font-size: 100%
-
-    &+ h5 + blockquote
-        margin: 3rem 0
-
-        *
-            text-align: center
-            hyphens: none
-
-
-
-        &::before,
-        &::after
-            content: ""
-            height: 1px
-            width: 8rem
-            background-color: $rgbaPale
-            transform: translate(-50%, 0)
-            position: absolute
-            left: 50%
-
-        &::before
-            top: -1rem
-
-        &::after
-            bottom: -1rem
-
-h6
-    &+ blockquote
-        padding-left: 1rem
-        border-left: 1px solid $rgbaDark
-
-    &+ h6 + blockquote
-        border-left-color: $rgbaPale
-        background-color: $rgbaBg2
-        padding: 1rem
-        color: $rgbaGrey
-
-    // ol
-    //     padding: 0
-    //     list-style-type: none
-    //     counter-reset: myLi
-    //     li
-    //         counter-increment: myLi
-    //         position: relative
-
-
-            // 从这里写下去
