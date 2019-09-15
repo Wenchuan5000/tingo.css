@@ -1,55 +1,23 @@
-&>
-    header,
+// &>
     p,
     h1, h2, h3, h4, h5, h6, details,
     ol, li,
-    .inputView,
-    button
-        padding: 0 1.5rem
-
-    blockquote
-        margin-left: 1.5rem
-        margin-right: 1.5rem
-
-$primaryLineHeight: 2
-$secondaryLineHeight: $primaryLineHeight - 0.25
+        @media only screen and (max-width: $mdMaxWidth + $mdHorizontalMargin * 2)
+            padding: 0 1.5rem
 
 
-// ====================
-// 标题们
-// ====================
-h1, h2, h3, h4, h5, h6
-    line-height: $secondaryLineHeight
-    margin-top: 1em
-    margin-bottom: 1rem
-    font-weight: 500
-
-h1
-    font-size: 1.25rem
-
-h2
-    font-size: 1.125rem
-
-h3, h4, h5, h6
-    font-size: 1rem
-
-h5, h6
-    display: none
-
-header
-    h1
-        font-size: 2.5rem
+// blockquote,
+// pre[class*="language-"]
+    @media only screen and (max-width: $mdMaxWidth + $mdHorizontalMargin * 2)
+        margin: $mdHorizontalMargin
 
 
-// ====================
-// 段落们
-// ====================
-p
-    font-size: 1rem
-    line-height: $primaryLineHeight
-    margin-top: 1em
-    margin-bottom: 1em
-
+*
+    text-align: justify
+    -webkit-hyphens: auto
+    -moz-hyphens: auto
+    -ms-hyphens: auto
+    hyphens: auto
 
 // ====================
 // 链接们
@@ -58,46 +26,6 @@ p, li, table, blockquote
     a
         color: $brandColor
         cursor: pointer
-
-
-// ====================
-// 列表们
-// ====================
-li
-    font-size: 1rem
-    line-height: 2em
-
-// 仅设置第一层的列表样式
-
-ul, ol
-    margin-top: 1em
-    margin-bottom: 1em
-    padding-left: 2rem
-    // 这里可以改变除第一层外的列表 padding-left
-
-    ul, ol
-        margin-top: 0
-        margin-bottom: 0
-
-ol
-    list-style-type: decimal
-
-ul
-    list-style-type: disc
-
-li
-    ol
-        list-style-type: lower-roman
-
-    ul
-        list-style-type: circle
-
-    li
-        ol
-            list-style-type: lower-alpha
-
-        ul
-            list-style-type: square
 
 
 // ====================
@@ -174,7 +102,7 @@ details
     summary
         font-weight: bold
         margin-left: -1rem
-        line-height: $primaryLineHeight
+        line-height: 2
 
     // &> ul,
     // &> ol
@@ -190,6 +118,9 @@ details
 
 @import "img"
 @import "blockquotes"
+@import "headings"
+@import "paragraphs"
+@import "list"
 
-@import "more/0-more"
+
 //

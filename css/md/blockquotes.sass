@@ -1,57 +1,137 @@
 blockquote
-    background-color: $hexBg2
-    color: $hexGrey
-    padding: 0.25rem 1rem
-    border-left: 2px solid $hexLightPale
-    font-weight: 400
-
-    margin-top: 1.5rem
-    margin-bottom: 1.5rem
-
-    &>
-        *
-            font-size: 87.5%
-            *
-                font-size: 100%
-
-    &:last-child
-        margin-bottom: 0.5rem
-
-    &~ h6
-        display: none
-
-h6 + blockquote
     background: none
-    padding: 0 1.5rem
     border: none
+    padding: 0
+    color: inherit
     position: relative
-
-    color: $rgbaDarkGrey
-    font-weight: 500
+    margin: 1.5rem 0
+    // padding-left: 1rem
+    // border-left: 1px solid $rgbaDark
 
     &>
         *
-            font-size: 100%
+            font-size: 87.5% !important
             *
                 font-size: 100%
+    *
+        text-align: left
+
+blockquote
+    blockquote
+        background: none
+        border: none
+        color: $rgbaDarkGrey
+        font-size: 100% !important
+        margin-bottom: 4rem
+
+        &::after
+            content: ""
+            position: absolute
+            width: 3rem
+            height: 1px
+            background-color: $rgbaPale
+
+            transform: translate(-50%, 0)
+            left: 50%
+            bottom: -1.5em
+
+        *
+            text-align: center
 
 
-    ::before
-        content: "“"
-        position: absolute
-        left: 0
-        top: 0
 
-        font-size: 3rem
-        line-height: 1
-        color: $rgbaPale
+h5
+    &+ blockquote
+        margin-top: 2rem
+        margin-bottom: 2rem
+        background: none
+        padding: 0 1.5em
+        border: none
+        position: relative
 
-    ::after
-        content: "”"
-        position: absolute
+        color: $rgbaDarkGrey
+        font-weight: 500
 
-        font-size: 2rem
-        color: $rgbaPale
-        // bottom: -2rem
-        // right: 0.5rem
-        margin-left: 0.5rem
+        &>
+            *
+                font-size: 100%
+                *
+                    font-size: 100%
+        *
+            text-align: left
+
+
+        &::before
+            background: none
+            content: "❛❛"
+            position: absolute
+            left: 0
+            top: -0.25em
+
+            font-size: 3em
+            line-height: 1
+            color: $rgbaLightPale
+
+        &::after
+            content: "❜❜"
+            // display: inline-block
+            position: absolute
+
+            font-size: 1.5em
+            color: $rgbaLightPale
+            bottom: 0
+            // right: 0.5rem
+            right: 0.5em
+
+        &>
+            *
+                font-size: 100% !important
+                *
+                    font-size: 100%
+
+    &+ h5 + blockquote
+        margin: 3rem 0
+
+        *
+            text-align: center
+            hyphens: none
+
+
+
+        &::before,
+        &::after
+            content: ""
+            height: 1px
+            width: 8rem
+            background-color: $rgbaPale
+            transform: translate(-50%, 0)
+            position: absolute
+            left: 50%
+
+        &::before
+            top: -1rem
+
+        &::after
+            bottom: -1rem
+
+h6
+    &+ blockquote
+        padding-left: 1rem
+        border-left: 1px solid $rgbaDark
+
+    &+ h6 + blockquote
+        border-left-color: $rgbaPale
+        background-color: $rgbaBg2
+        padding: 1rem
+        color: $rgbaGrey
+
+    // ol
+    //     padding: 0
+    //     list-style-type: none
+    //     counter-reset: myLi
+    //     li
+    //         counter-increment: myLi
+    //         position: relative
+
+
+            // 从这里写下去
