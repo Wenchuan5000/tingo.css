@@ -45,7 +45,7 @@ blockquote
 
 
 .quote
-    &+ blockquote
+    &+ blockquote,
         margin-top: 2rem
         margin-bottom: 2rem
         background: none
@@ -54,8 +54,9 @@ blockquote
         position: relative
         box-shadow: none
 
-        color: $rgbaDarkGrey
+        // color: $rgbaDarkGrey
         font-weight: 500
+        line-height: 2
 
         &>
             *
@@ -68,23 +69,23 @@ blockquote
 
         &::before
             background: none
-            content: "❛❛"
+            content: "“"
             position: absolute
             left: 0
             top: -0.25em
 
-            font-size: 3em
+            font-size: 3.5em
             line-height: 1
             color: $rgbaLightPale
 
         &::after
-            content: "❜❜"
+            content: "”"
             // display: inline-block
             position: absolute
 
-            font-size: 1.5em
+            font-size: 2.5em
             color: $rgbaLightPale
-            bottom: 0
+            bottom: -2rem
             // right: 0.5rem
             right: 0.5em
 

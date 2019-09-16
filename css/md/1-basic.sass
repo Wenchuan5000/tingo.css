@@ -1,15 +1,21 @@
-// &>
-    p,
-    h1, h2, h3, h4, h5, h6, details,
-    ol, li,
-        @media only screen and (max-width: $mdMaxWidth + $mdHorizontalMargin * 2)
-            padding: 0 1.5rem
+&
+    max-width: $mdMaxWidth
+    margin: 0 auto
+    // letter-spacing: 0.2px
 
-
-// blockquote,
-// pre[class*="language-"]
     @media only screen and (max-width: $mdMaxWidth + $mdHorizontalMargin * 2)
-        margin: $mdHorizontalMargin
+        max-width: 100%
+
+    @media only screen and (max-width: $iPhonePlus)
+        // font-weight: 300
+
+    *
+        &::selection
+            background-color: rgba($brandColor, 0.16)
+
+    padding: 0 24px
+
+// 以上是 Markdown 页面的基本设置，导出为 Markdown CSS 时，请记得加上 body 父类
 
 
 *
@@ -35,7 +41,7 @@ hr
     border: none
     width: auto
     height: 1px
-    border-bottom: 1px solid $rgbaPale
+    border-bottom: 1px solid $rgbaLightPale
     margin: 1.5rem 0
 
 

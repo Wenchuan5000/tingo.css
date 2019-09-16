@@ -90,18 +90,20 @@ img {
 
 .md,
 .markdown-body {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 24px;
   /* Separate line b/c rules are thrown out if selector is invalid.
    * IE11 and old Edge versions don't support :focus-within. */ }
-  @media only screen and (max-width: 768px) {
-    .md,
-    .markdown-body {
-      max-width: 100%; } }
-  .md *::selection,
-  .markdown-body *::selection {
-    background-color: rgba(51, 195, 194, 0.16); }
+  .md,
+  .markdown-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px; }
+    @media only screen and (max-width: 768px) {
+      .md,
+      .markdown-body {
+        max-width: 100%; } }
+    .md *::selection,
+    .markdown-body *::selection {
+      background-color: rgba(51, 195, 194, 0.16); }
   .md *,
   .markdown-body * {
     text-align: justify;
@@ -121,7 +123,7 @@ img {
     border: none;
     width: auto;
     height: 1px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     margin: 1.5rem 0; }
   .md sup, .md sub,
   .markdown-body sup,
@@ -301,8 +303,8 @@ img {
     border: none;
     position: relative;
     box-shadow: none;
-    color: rgba(0, 0, 0, 0.64);
-    font-weight: 500; }
+    font-weight: 500;
+    line-height: 2; }
     .md .quote + blockquote > *,
     .markdown-body .quote + blockquote > * {
       font-size: 100%; }
@@ -315,20 +317,20 @@ img {
     .md .quote + blockquote::before,
     .markdown-body .quote + blockquote::before {
       background: none;
-      content: "❛❛";
+      content: "“";
       position: absolute;
       left: 0;
       top: -0.25em;
-      font-size: 3em;
+      font-size: 3.5em;
       line-height: 1;
       color: rgba(0, 0, 0, 0.08); }
     .md .quote + blockquote::after,
     .markdown-body .quote + blockquote::after {
-      content: "❜❜";
+      content: "”";
       position: absolute;
-      font-size: 1.5em;
+      font-size: 2.5em;
       color: rgba(0, 0, 0, 0.08);
-      bottom: 0;
+      bottom: -2rem;
       right: 0.5em; }
     .md .quote + blockquote > *,
     .markdown-body .quote + blockquote > * {
